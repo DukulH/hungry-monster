@@ -1,3 +1,22 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+.btnColor{
+    background-color: #F06C4E;
+    color: white;
+}input{
+    font-family: FontAwesome-5;
+    font-weight: 700;
+}
+.mealInfo{
+    border-radius: 10px;
+    text-align: center;
+}
+.mealInfo img {
+    border-radius: 10px;
+}
+#search-results{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
