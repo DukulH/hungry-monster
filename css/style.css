@@ -20,3 +20,6 @@ body{
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
 }
+#meal-ingredient-details li{
+    list-style: none;
+}
