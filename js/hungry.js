@@ -7,10 +7,10 @@ inputMealName = () => {
     const mealName = document.getElementById('meal-name').value;
     if (mealName === "") {
         searchResultShow.innerHTML = "";
+        mealIngredientDetails.innerHTML = "";
         return error.innerText = 'Please enter meal name!';
     }
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`;
-    console.log(url);
     fetch(url)
         .then(response => response.json())
         .then(data => displayResults(data));
@@ -26,6 +26,7 @@ displayResults = givenMealName => {
     }
     if (count > 1) {
         searchResultShow.innerHTML = "";
+        mealIngredientDetails.innerHTML = "";
         count--;
     }
     if (count <= 1) {
@@ -36,14 +37,12 @@ displayResults = givenMealName => {
             const mealDiv = document.createElement('div');
             mealDiv.className = 'mealInfo';
             mealDiv.innerHTML = `
-        
         <div class="card mt-5 pb-5" onclick="gettingMealDetail('${mealName.strMeal}')" >
             <img class="card-img-top" src="${mealName.strMealThumb}">
             <div class="card-body">
             <h3 class="card-text">${mealName.strMeal}</h3>
             </div>
-        </div>
-            
+        </div> 
         `
             searchResultShow.appendChild(mealDiv);
         });
@@ -78,8 +77,4 @@ const viewIngredient = mealName => {
     </div>
     </div>
         `
-
-
-}
-
-
+    }
