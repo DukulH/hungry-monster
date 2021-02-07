@@ -22,6 +22,7 @@ displayResults = givenMealName => {
     const matchedMeal = givenMealName.meals;
     if (matchedMeal === null) {
         searchResultShow.innerHTML = "";
+        mealIngredientDetails.innerHTML = "";
         return error.innerText = 'Opps!! No meals found!!';
     }
     if (count > 1) {
